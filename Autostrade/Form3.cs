@@ -52,14 +52,28 @@ namespace Autostrade
 
             if(dialog.ShowDialog() == DialogResult.OK)
             {
-                rjButton1.Controls.Remove(rjButton1);
-                TextBox nomeFileBox = new TextBox();
-                nomeFileBox.BackColor.Equals(targaBox.BackColor);
-                tableLayoutPanel1.Controls.Add(nomeFileBox, 1, 3);
-                nomeFileBox.Text = openFileDialog1.FileName;
+                rjButton1.Text = dialog.SafeFileName;
+                //copiare il file di origine nella cartello di destinazione (database)
             }
             
                     
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog()
+            {
+                CheckFileExists = true,
+                CheckPathExists = true,
+                RestoreDirectory = true,
+                ShowReadOnly = true,
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                rjButton2.Text = dialog.SafeFileName;
+                //copiare il file di origine nella cartello di destinazione (database)
+            }
         }
     }
 }

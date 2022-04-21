@@ -24,6 +24,7 @@ namespace Autostrade
                 this.Hide();
                 Form2 form = new Form2();
                 form.ShowDialog();
+                this.Close();
             }
         }
 
