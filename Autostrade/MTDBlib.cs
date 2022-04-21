@@ -180,10 +180,16 @@ namespace CSmtdb
             sendBuf[0] = 0x04;
             var temp = new byte[MAX_BUF_LEN];
             var name = ByteArray.Resize(128, Encoding.ASCII.GetBytes(column));
+            var str = ByteArray.Resize(128, Encoding.ASCII.GetBytes(stringToSearch));
 
             for (int i = 0; i < 128; i++)
             {
                 sendBuf[i + 1] = name[i];
+            }
+
+            for (int i = 0; i < 128; i++)
+            {
+                sendBuf[i + 128] = str[i];
             }
 
             stream.Write(sendBuf, 0, sendBuf.Length);
@@ -204,6 +210,169 @@ namespace CSmtdb
 
             return list;
         }
+
+
+        public List<DataBaseObject> GetIfEqu(string column, DBtype type, object value)
+        {
+            sendBuf = new byte[MAX_BUF_LEN];
+            sendBuf[0] = 0x05;
+            var temp = new byte[MAX_BUF_LEN];
+            var name = ByteArray.Resize(128, Encoding.ASCII.GetBytes(column));
+            byte[] obj;
+
+            if(type == DBtype.INTEGER)
+            {
+                obj = Number.FromInt((int)value);
+            } else if(type == DBtype.REAL)
+            {
+                obj = Number.FromFloat((float)value);
+
+            }
+            else
+            {
+                obj = ByteArray.Resize(128, Encoding.ASCII.GetBytes((string)value));
+
+            }
+
+            for (int i = 0; i < 128; i++)
+            {
+                sendBuf[i + 1] = name[i];
+            }
+
+            sendBuf[128] = (byte)type;
+
+            for (int i = 0; i < obj.Length; i++)
+            {
+                sendBuf[i + 129] = obj[i];
+            }
+
+            stream.Write(sendBuf, 0, sendBuf.Length);
+            stream.Read(temp, 0, MAX_BUF_LEN);
+
+            var list = new List<DataBaseObject>();
+
+            for (int i = 0, pos = 1; i < temp[0]; i++, pos += 4)
+            {
+                list.Add(
+                    Get(
+                        Number.ToInt(
+                            ByteArray.SubByteArray(temp, pos, pos + 4)
+                        )
+                    )
+                );
+            }
+
+            return list;
+        }
+
+        public List<DataBaseObject> GetIfGrater(string column, DBtype type, object value)
+        {
+            sendBuf = new byte[MAX_BUF_LEN];
+            sendBuf[0] = 0x06;
+            var temp = new byte[MAX_BUF_LEN];
+            var name = ByteArray.Resize(128, Encoding.ASCII.GetBytes(column));
+            byte[] obj;
+
+            if (type == DBtype.INTEGER)
+            {
+                obj = Number.FromInt((int)value);
+            }
+            else if (type == DBtype.REAL)
+            {
+                obj = Number.FromFloat((float)value);
+
+            }
+            else
+            {
+                obj = ByteArray.Resize(128, Encoding.ASCII.GetBytes((string)value));
+
+            }
+
+            for (int i = 0; i < 128; i++)
+            {
+                sendBuf[i + 1] = name[i];
+            }
+
+            sendBuf[128] = (byte)type;
+
+            for (int i = 0; i < obj.Length; i++)
+            {
+                sendBuf[i + 129] = obj[i];
+            }
+
+            stream.Write(sendBuf, 0, sendBuf.Length);
+            stream.Read(temp, 0, MAX_BUF_LEN);
+
+            var list = new List<DataBaseObject>();
+
+            for (int i = 0, pos = 1; i < temp[0]; i++, pos += 4)
+            {
+                list.Add(
+                    Get(
+                        Number.ToInt(
+                            ByteArray.SubByteArray(temp, pos, pos + 4)
+                        )
+                    )
+                );
+            }
+
+            return list;
+        }
+
+        public List<DataBaseObject> GetIfLess(string column, DBtype type, object value)
+        {
+            sendBuf = new byte[MAX_BUF_LEN];
+            sendBuf[0] = 0x06;
+            var temp = new byte[MAX_BUF_LEN];
+            var name = ByteArray.Resize(128, Encoding.ASCII.GetBytes(column));
+            byte[] obj;
+
+            if (type == DBtype.INTEGER)
+            {
+                obj = Number.FromInt((int)value);
+            }
+            else if (type == DBtype.REAL)
+            {
+                obj = Number.FromFloat((float)value);
+
+            }
+            else
+            {
+                obj = ByteArray.Resize(128, Encoding.ASCII.GetBytes((string)value));
+
+            }
+
+            for (int i = 0; i < 128; i++)
+            {
+                sendBuf[i + 1] = name[i];
+            }
+
+            sendBuf[128] = (byte)type;
+
+            for (int i = 0; i < obj.Length; i++)
+            {
+                sendBuf[i + 129] = obj[i];
+            }
+
+            stream.Write(sendBuf, 0, sendBuf.Length);
+            stream.Read(temp, 0, MAX_BUF_LEN);
+
+            var list = new List<DataBaseObject>();
+
+            for (int i = 0, pos = 1; i < temp[0]; i++, pos += 4)
+            {
+                list.Add(
+                    Get(
+                        Number.ToInt(
+                            ByteArray.SubByteArray(temp, pos, pos + 4)
+                        )
+                    )
+                );
+            }
+
+            return list;
+        }
+
         public bool SafeDefineTable(TableDescriptor td)
         {
             byte[] tdBytes = td.ToBytes();
