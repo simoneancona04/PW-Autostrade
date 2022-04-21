@@ -12,6 +12,9 @@ namespace Autostrade
 {
     public partial class Form1 : Form
     {
+        List<Vettura> listVettura = new List<Vettura>();
+
+
         public Form1()
         {
             InitializeComponent();
