@@ -26,6 +26,10 @@ namespace Autostrade
 
         private void addAuto_Click(object sender, EventArgs e)
         {
+            if(marcaBox.Text.Length == 0 || modBox.Text.Length == 0 || targaBox.Text.Length == 0)
+            {
+                MessageBox.Show("Inserire i dati nei campi", "Errore");
+            }
             //frm.TableMacchineAdd(marcaBox.Text,modBox.Text,targaBox.Text);
             this.Close();
         }
