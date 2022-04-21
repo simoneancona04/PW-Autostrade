@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS7022: Il punto di ingresso del programma è codice globale. Il punto di ingresso 'Program.Main()' verrà ignorato.
+dotnet_diagnostic.CS7022.severity = none
