@@ -587,11 +587,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simon\\Source\\Repos\\PW-Autostrade\\Autostrade\\Autostrade.csproj",
+      "projectUniqueName": "C:\\Users\\simon\\Source\\Repos\\simoneancona04\\PW-Autostrade\\Autostrade\\Autostrade.csproj",
       "projectName": "Autostrade",
-      "projectPath": "C:\\Users\\simon\\Source\\Repos\\PW-Autostrade\\Autostrade\\Autostrade.csproj",
+      "projectPath": "C:\\Users\\simon\\Source\\Repos\\simoneancona04\\PW-Autostrade\\Autostrade\\Autostrade.csproj",
       "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simon\\Source\\Repos\\PW-Autostrade\\Autostrade\\obj\\",
+      "outputPath": "C:\\Users\\simon\\Source\\Repos\\simoneancona04\\PW-Autostrade\\Autostrade\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",

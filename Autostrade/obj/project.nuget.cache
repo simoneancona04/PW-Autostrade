@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rBmICD9oEfjJyhzi8+b56+wUxtmQuX5YXGnPXZIH4kIDJK8ZBsTi5f1VDf137qPUH3+AR5M/dk5kL9ySBwwTBA==",
+  "dgSpecHash": "z3Hd6VCck/GNw2i8JSxV+DDRMLhkyesUdWKQAHldiDi1uacTG3WFeP06gtnUL6OoUO5y/9tZhpI9cKsrWQpCQA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\simon\\Source\\Repos\\PW-Autostrade\\Autostrade\\Autostrade.csproj",
+  "projectFilePath": "C:\\Users\\simon\\Source\\Repos\\simoneancona04\\PW-Autostrade\\Autostrade\\Autostrade.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\simon\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
