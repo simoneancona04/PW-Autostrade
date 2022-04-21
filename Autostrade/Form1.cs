@@ -7,13 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CSmtdb;
 
 namespace Autostrade
 {
     public partial class Form1 : Form
     {
+        List<Vettura> listVettura = new List<Vettura>();
+        MTDBHandler carDatabase;
+        MTDBHandler userDatabase;
+
         public Form1()
         {
+            InitializeComponent();
+        }
+        public Form1(MTDBHandler carDatabase,MTDBHandler userDatabase)
+        {
+            this.carDatabase = carDatabase;     
+            this.userDatabase = userDatabase;
             InitializeComponent();
         }
 
@@ -24,6 +35,7 @@ namespace Autostrade
                 this.Hide();
                 Form2 form = new Form2();
                 form.ShowDialog();
+                this.Close();
             }
         }
 

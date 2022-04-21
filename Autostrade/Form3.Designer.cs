@@ -35,7 +35,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.consumiBox = new System.Windows.Forms.TextBox();
-            this.annoImmBox = new System.Windows.Forms.TextBox();
             this.targaBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,6 +53,8 @@
             this.dataCambiopne = new System.Windows.Forms.DateTimePicker();
             this.rjButton1 = new Autostrade.BTNCONTROLLER.RJButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.rjButton2 = new Autostrade.BTNCONTROLLER.RJButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -124,9 +125,9 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.5F));
+            this.tableLayoutPanel1.Controls.Add(this.rjButton2, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.consumiBox, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.annoImmBox, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.targaBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
@@ -144,6 +145,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dataScadBolli, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.dataCambiopne, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.rjButton1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 45);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
@@ -184,18 +186,6 @@
             this.consumiBox.Name = "consumiBox";
             this.consumiBox.Size = new System.Drawing.Size(590, 25);
             this.consumiBox.TabIndex = 16;
-            // 
-            // annoImmBox
-            // 
-            this.annoImmBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(180)))));
-            this.annoImmBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.annoImmBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.annoImmBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.annoImmBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.annoImmBox.Location = new System.Drawing.Point(207, 127);
-            this.annoImmBox.Name = "annoImmBox";
-            this.annoImmBox.Size = new System.Drawing.Size(590, 25);
-            this.annoImmBox.TabIndex = 15;
             // 
             // targaBox
             // 
@@ -367,6 +357,7 @@
             // 
             // dataScadBolli
             // 
+            this.dataScadBolli.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataScadBolli.Location = new System.Drawing.Point(207, 189);
             this.dataScadBolli.Name = "dataScadBolli";
             this.dataScadBolli.Size = new System.Drawing.Size(200, 23);
@@ -374,6 +365,7 @@
             // 
             // dataCambiopne
             // 
+            this.dataCambiopne.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataCambiopne.Location = new System.Drawing.Point(207, 251);
             this.dataCambiopne.Name = "dataCambiopne";
             this.dataCambiopne.Size = new System.Drawing.Size(200, 23);
@@ -402,6 +394,37 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(207, 127);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.RightToLeftLayout = true;
+            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.TabIndex = 26;
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.White;
+            this.rjButton2.BackgroundColor = System.Drawing.Color.White;
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 5;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.ForeColor = System.Drawing.Color.Black;
+            this.rjButton2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.rjButton2.Location = new System.Drawing.Point(207, 282);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(150, 25);
+            this.rjButton2.TabIndex = 27;
+            this.rjButton2.Text = "AGGIUNGI FILE";
+            this.rjButton2.TextColor = System.Drawing.Color.Black;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
             // Form3
             // 
@@ -441,7 +464,6 @@
         private BTNCONTROLLER.RJButton closePage;
         private TextBox modBox;
         private TextBox consumiBox;
-        private TextBox annoImmBox;
         private TextBox targaBox;
         private TextBox marcaBox;
         private TextBox textBox2;
@@ -449,5 +471,7 @@
         private DateTimePicker dataCambiopne;
         private OpenFileDialog openFileDialog1;
         private BTNCONTROLLER.RJButton rjButton1;
+        private DateTimePicker dateTimePicker1;
+        private BTNCONTROLLER.RJButton rjButton2;
     }
 }

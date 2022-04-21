@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\simon\\Source\\Repos\\simoneancona04\\PW-Autostrade\\Autostrade\\Autostrade.csproj": {}
+    "D:\\Dati Utente\\Desktop\\Scuola\\Informatica\\Autostrade\\Autostrade\\Autostrade.csproj": {}
   },
   "projects": {
-    "C:\\Users\\simon\\Source\\Repos\\simoneancona04\\PW-Autostrade\\Autostrade\\Autostrade.csproj": {
+    "D:\\Dati Utente\\Desktop\\Scuola\\Informatica\\Autostrade\\Autostrade\\Autostrade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\simon\\Source\\Repos\\simoneancona04\\PW-Autostrade\\Autostrade\\Autostrade.csproj",
+        "projectUniqueName": "D:\\Dati Utente\\Desktop\\Scuola\\Informatica\\Autostrade\\Autostrade\\Autostrade.csproj",
         "projectName": "Autostrade",
-        "projectPath": "C:\\Users\\simon\\Source\\Repos\\simoneancona04\\PW-Autostrade\\Autostrade\\Autostrade.csproj",
-        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\simon\\Source\\Repos\\simoneancona04\\PW-Autostrade\\Autostrade\\obj\\",
+        "projectPath": "D:\\Dati Utente\\Desktop\\Scuola\\Informatica\\Autostrade\\Autostrade\\Autostrade.csproj",
+        "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
+        "outputPath": "D:\\Dati Utente\\Desktop\\Scuola\\Informatica\\Autostrade\\Autostrade\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +75,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

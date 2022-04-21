@@ -26,6 +26,10 @@ namespace Autostrade
 
         private void addAuto_Click(object sender, EventArgs e)
         {
+            if(marcaBox.Text.Length == 0 || modBox.Text.Length == 0 || targaBox.Text.Length == 0)
+            {
+                MessageBox.Show("Inserire i dati nei campi", "Errore");
+            }
             //frm.TableMacchineAdd(marcaBox.Text,modBox.Text,targaBox.Text);
             this.Close();
         }
@@ -52,14 +56,28 @@ namespace Autostrade
 
             if(dialog.ShowDialog() == DialogResult.OK)
             {
-                rjButton1.Controls.Remove(rjButton1);
-                TextBox nomeFileBox = new TextBox();
-                nomeFileBox.BackColor.Equals(targaBox.BackColor);
-                tableLayoutPanel1.Controls.Add(nomeFileBox, 1, 3);
-                nomeFileBox.Text = openFileDialog1.FileName;
+                rjButton1.Text = dialog.SafeFileName;
+                //copiare il file di origine nella cartello di destinazione (database)
             }
             
                     
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog()
+            {
+                CheckFileExists = true,
+                CheckPathExists = true,
+                RestoreDirectory = true,
+                ShowReadOnly = true,
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                rjButton2.Text = dialog.SafeFileName;
+                //copiare il file di origine nella cartello di destinazione (database)
+            }
         }
     }
 }
