@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using CSmtdb;
 
 namespace Autostrade
 {
@@ -29,6 +30,10 @@ namespace Autostrade
             users.StartInfo.WorkingDirectory = uFile;
             users.StartInfo.CreateNoWindow = true;
             users.Start();
+
+            var carDatabase = new MTDBHandler("localhost", 44000);
+            var userDatabase = new MTDBHandler("localhost", 44001);
+            //var carDatabase = new MTDBHandler("localhost", 44000);
 
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
