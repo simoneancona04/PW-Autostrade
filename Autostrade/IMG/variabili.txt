@@ -1,0 +1,25 @@
+REGISTRAZIONE VETTURA
+
+- Marca
+- Modello
+- Targa
+- libretto (pdf,jpg....)
+- Anno di Immatricolazione (con calendario)
+- Consumi giornalieri (da capire)
+- Scadenze bolli (con calendario)
+- Tagliandi
+- cambio pneumatici (da capire)
+- Assicurazione RCA (file)
+- Enventuali sinistri (da capire)
+
+REGISTRAZIONI PATENTI
+
+- Nome
+- Cognome
+- data di nascita
+- Luogo di nascita
+- Data del Rilascio
+- Data di scadenza
+- Numero della patente
+- Categoria della patente
+- Retro codice in basso a destra
