@@ -48,6 +48,23 @@ namespace Autostrade
             var maintDatabase = new MTDBHandler("localhost", 44002);
             var licenseDatabase = new MTDBHandler("localhost", 44003);
 
+            var carTable = new TableDescriptor("vetture");
+            var userTable = new TableDescriptor("utenti");
+            var maintTable = new TableDescriptor("manutenzione");
+            var licenseTable = new TableDescriptor("patenti");
+
+            carTable.Columns.Add(new ColumnDescriptor("targa", DBtype.STRING128));
+            carTable.Columns.Add(new ColumnDescriptor("modello", DBtype.STRING128));
+            carTable.Columns.Add(new ColumnDescriptor("marca", DBtype.STRING128));
+            carTable.Columns.Add(new ColumnDescriptor("libretto", DBtype.STRING128));
+            carTable.Columns.Add(new ColumnDescriptor("anno", DBtype.INTEGER));
+            carTable.Columns.Add(new ColumnDescriptor("consumi", DBtype.REAL));
+
+            userTable.Columns.Add(new ColumnDescriptor("nome", DBtype.STRING128));
+            userTable.Columns.Add(new ColumnDescriptor("password", DBtype.STRING128));
+
+            carDatabase.SafeDefineTable(carTable);
+            userDatabase.SafeDefineTable(userTable);
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
             
