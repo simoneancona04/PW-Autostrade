@@ -30,18 +30,42 @@ namespace Autostrade
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text=="admin" && txtPassword.Text == "password")
+            int index = checkUtente();
+            if (index == -1)
             {
-                this.Hide();
-                Form2 form = new Form2();
-                form.ShowDialog();
-                this.Close();
+                MessageBox.Show("Nome utente o password errati", "Errore");
+            }
+            else
+            {
+                DataBaseObject utente = userDatabase.Get(index);
+                if (utente.GetString("password") != txtPassword.Text)
+                {
+                    MessageBox.Show("Nome utente o password errati", "Errore");
+                }
+                else
+                {
+                    this.Hide();
+                    Form2 form = new Form2();
+                    form.ShowDialog();
+                    this.Close();
+                }
             }
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private int checkUtente()
+        {
+            int index=1;
+            foreach (String nome in userDatabase.GetColumn("nome", DBtype.STRING128))
+            {
+                if (nome.Equals(txtUsername.Text)) return index;
+                index++;
+            }
+            return -1;
         }
     }
 }
