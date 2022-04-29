@@ -65,8 +65,13 @@ namespace Autostrade
 
             carDatabase.SafeDefineTable(carTable);
             userDatabase.SafeDefineTable(userTable);
+            var admin = new DataBaseObject();
+            admin.AddString("nome", "admin");
+            admin.AddString("password", "password");
+            userDatabase.Insert(admin);
+
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Form1(carDatabase, userDatabase));
             
         }
     }
