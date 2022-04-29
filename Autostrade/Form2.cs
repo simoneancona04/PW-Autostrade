@@ -7,13 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CSmtdb;
 
 namespace Autostrade
 {
     public partial class Form2 : Form
     {
+        MTDBHandler carDatabase;
+        MTDBHandler userDatabase;
+
         public Form2()
         {
+            InitializeComponent();
+        }
+        public Form2(MTDBHandler carDatabase, MTDBHandler userDatabase)
+        {
+            this.carDatabase = carDatabase;
+            this.userDatabase = userDatabase;
             InitializeComponent();
         }
 
@@ -37,6 +47,7 @@ namespace Autostrade
            
             this.PnlFormLoader.Controls.Clear();
             frmVetture frmVetture_vrb = new frmVetture() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmVetture_vrb.Size = new System.Drawing.Size(PnlFormLoader.Size.Width, PnlFormLoader.Size.Height);
             frmVetture_vrb.FormBorderStyle=FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(frmVetture_vrb);
             frmVetture_vrb.Show();

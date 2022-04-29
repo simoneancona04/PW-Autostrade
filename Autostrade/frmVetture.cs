@@ -8,14 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CSmtdb;
 
 namespace Autostrade
 {
     public partial class frmVetture : Form
     {
+        MTDBHandler carDatabase;
+        MTDBHandler userDatabase;
         public frmVetture()
         {
            
+            InitializeComponent();
+        }
+        public frmVetture(MTDBHandler carDatabase, MTDBHandler userDatabase)
+        {
+            this.carDatabase = carDatabase;     
+            this.userDatabase = userDatabase;
             InitializeComponent();
         }
 
@@ -49,7 +58,7 @@ namespace Autostrade
             button.ForeColor = Color.White;
             button.TextAlign = ContentAlignment.MiddleLeft;
             button.Text = modello.ToUpper() + "\t"  + targa.ToUpper() + "\t" + annoImm.ToUpper();
-            button.Name = modello + "Button";
+            button.Name = targa + "Button";
             AddVettura frm = new AddVettura(this);
             //button.DoubleClick += new EventHandler(callFunc);
             button.BorderRadius = 15;
@@ -81,5 +90,7 @@ namespace Autostrade
         {
 
         }
+
+        
     }
 }

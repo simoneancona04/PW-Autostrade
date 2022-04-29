@@ -45,7 +45,7 @@ namespace Autostrade
                 else
                 {
                     this.Hide();
-                    Form2 form = new Form2();
+                    Form2 form = new Form2(carDatabase,userDatabase);
                     form.ShowDialog();
                     this.Close();
                 }

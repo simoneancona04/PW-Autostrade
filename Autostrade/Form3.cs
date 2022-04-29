@@ -30,8 +30,12 @@ namespace Autostrade
             {
                 MessageBox.Show("Inserire i dati nei campi", "Errore");
             }
+            else
+            {
+                this.Close();
+            }
             //frm.TableMacchineAdd(marcaBox.Text,modBox.Text,targaBox.Text);
-            this.Close();
+            
         }
 
         private void closePage_Click(object sender, EventArgs e)

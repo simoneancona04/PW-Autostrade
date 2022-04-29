@@ -134,7 +134,7 @@
             this.PnlFormLoader.Location = new System.Drawing.Point(177, 0);
             this.PnlFormLoader.Margin = new System.Windows.Forms.Padding(3, 3, 20, 20);
             this.PnlFormLoader.Name = "PnlFormLoader";
-            this.PnlFormLoader.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.PnlFormLoader.Padding = new System.Windows.Forms.Padding(15);
             this.PnlFormLoader.Size = new System.Drawing.Size(907, 631);
             this.PnlFormLoader.TabIndex = 3;
             // 

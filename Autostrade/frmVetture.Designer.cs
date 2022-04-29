@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.rjButton1 = new Autostrade.BTNCONTROLLER.RJButton();
             this.rjButton2 = new Autostrade.BTNCONTROLLER.RJButton();
@@ -35,11 +36,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.TableMacchine = new System.Windows.Forms.TableLayoutPanel();
+            this.columnDescriptorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.columnDescriptorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.columnDescriptorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columnDescriptorBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -140,20 +145,25 @@
             // 
             // TableMacchine
             // 
-            this.TableMacchine.AutoScroll = true;
-            this.TableMacchine.AutoSize = true;
-            this.TableMacchine.BackColor = System.Drawing.Color.Transparent;
             this.TableMacchine.ColumnCount = 1;
-            this.TableMacchine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.TableMacchine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TableMacchine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableMacchine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TableMacchine.Location = new System.Drawing.Point(0, 0);
             this.TableMacchine.Name = "TableMacchine";
-            this.TableMacchine.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.TableMacchine.RowCount = 1;
-            this.TableMacchine.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TableMacchine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TableMacchine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TableMacchine.Size = new System.Drawing.Size(263, 388);
-            this.TableMacchine.TabIndex = 1;
-            this.TableMacchine.Paint += new System.Windows.Forms.PaintEventHandler(this.TableMacchine_Paint);
+            this.TableMacchine.TabIndex = 0;
+            // 
+            // columnDescriptorBindingSource
+            // 
+            this.columnDescriptorBindingSource.DataSource = typeof(CSmtdb.ColumnDescriptor);
+            // 
+            // columnDescriptorBindingSource1
+            // 
+            this.columnDescriptorBindingSource1.DataSource = typeof(CSmtdb.ColumnDescriptor);
             // 
             // frmVetture
             // 
@@ -167,9 +177,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.columnDescriptorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columnDescriptorBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,7 +192,9 @@
         private Autostrade.BTNCONTROLLER.RJButton rjButton2;
         private Autostrade.BTNCONTROLLER.RJButton rjButton3;
         private Panel panel1;
-        private TableLayoutPanel TableMacchine;
         private SplitContainer splitContainer1;
+        private BindingSource columnDescriptorBindingSource;
+        private BindingSource columnDescriptorBindingSource1;
+        private TableLayoutPanel TableMacchine;
     }
 }
